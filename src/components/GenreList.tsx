@@ -6,9 +6,10 @@ import { wrap } from "framer-motion";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
   const genreSkeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
@@ -31,6 +32,7 @@ const GenreList = ({ onSelectGenre }: Props) => {
               src={getCroppedImageUrl(genre.image_background)}
             />
             <Button
+              fontWeight={selectedGenre?.id === genre.id ? "bold" : "normal"}
               onClick={() => onSelectGenre(genre)}
               fontSize={"lg"}
               variant={"link"}
