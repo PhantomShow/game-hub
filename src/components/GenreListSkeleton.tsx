@@ -1,18 +1,10 @@
-import {
-  Box,
-  HStack,
-  List,
-  ListItem,
-  Skeleton,
-  SkeletonCircle,
-  SkeletonText,
-} from "@chakra-ui/react";
+import { HStack, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
 
 const GenreListSkeleton = () => {
   return (
-    <HStack paddingY={3}>
-      <SkeletonCircle height={12} width={12} />
-      <SkeletonText width={100} />
+    <HStack>
+      <SkeletonCircle borderRadius={8} height={12} width={12} />
+      <SkeletonText width={200} />
     </HStack>
   );
 };
