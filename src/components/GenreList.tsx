@@ -9,7 +9,6 @@ import {
 import useGenres, { Genre } from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
 import GenreListSkeleton from "./GenreListSkeleton";
-import { wrap } from "framer-motion";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
@@ -34,7 +33,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
               <GenreListSkeleton />
             </ListItem>
           ))}
-        {data.map((genre) => (
+        {data?.results.map((genre) => (
           <ListItem key={genre.id} paddingY={"5px"}>
             <HStack>
               <Image
