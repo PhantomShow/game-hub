@@ -1,6 +1,5 @@
 import React from "react";
 import usePlatforms from "./usePlatforms";
-import { GameQuery } from "../App";
 
 const usePlatform = (id?: number) => {
   const { data: platforms } = usePlatforms();
